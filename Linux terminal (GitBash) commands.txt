@@ -1,0 +1,153 @@
+1) Посмотреть где я
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28
+$ pwd
+/c/group_28
+
+2) Создать папку
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28
+$ mkdir Linux_terminal
+
+3) Зайти в папку
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28
+$ cd Linux_terminal/
+
+4) Создать 3 папки
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ mkdir p1 p2 p3
+
+5) Зайти в любоую папку
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ cd p1
+
+6) Создать 5 файлов (3 txt, 2 json)
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/p1
+$ touch 1_f.txt 2_f.txt 3_f.txt 1_f.json 2_f.json
+
+7) Создать 3 папки
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/p1
+$ mkdir QA_1 QA_2 QA_3
+
+8) Вывести список содержимого папки
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/p1
+$ ls -la
+total 4
+drwxr-xr-x 1 Анжелика 197121 0 апр  6 21:30 ./
+drwxr-xr-x 1 Анжелика 197121 0 апр  6 21:26 ../
+-rw-r--r-- 1 Анжелика 197121 0 апр  6 21:29 1_f.json
+-rw-r--r-- 1 Анжелика 197121 0 апр  6 21:29 1_f.txt
+-rw-r--r-- 1 Анжелика 197121 0 апр  6 21:29 2_f.json
+-rw-r--r-- 1 Анжелика 197121 0 апр  6 21:29 2_f.txt
+-rw-r--r-- 1 Анжелика 197121 0 апр  6 21:29 3_f.txt
+drwxr-xr-x 1 Анжелика 197121 0 апр  6 21:30 QA_1/
+drwxr-xr-x 1 Анжелика 197121 0 апр  6 21:30 QA_2/
+drwxr-xr-x 1 Анжелика 197121 0 апр  6 21:30 QA_3/
+
+9) + Открыть любой txt файл
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/p1
+$ vim 1_f.txt
+
+10) + написать туда что-нибудь, любой текст.
+Hello World
+
+1. Команда pwd
+2. Команда cd
+3. Команда ls
+4. Команда cat
+5. Команда cp
+6. Команда mv
+7. Команда mkdir
+8. Команда rmdir
+9. Команда rm
+10. Команда touch
+
+
+11) + сохранить и выйти.
+:wq
+
+12) Выйти из папки на уровень выше
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/p1
+$ cd ..
+
+———————————————
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ mv p1/1_f.txt p1/2_f.txt p2/
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ cp p1/1_f.json p1/2_f.json p3/
+
+15) Найти файл по имени
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ find p2 -name "2_*"
+p2/2_f.txt
+
+16) просмотреть содержимое в реальном времени.  
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ tail -f p2/1_f.txt
+Hello World
+
+1. Команда pwd
+2. Команда cd
+3. Команда ls
+4. Команда cat
+5. Команда cp
+6. Команда mv
+7. Команда mkdir
+8. Команда rmdir
+9. Команда rm
+10. Команда touch
+
+
+17) вывести несколько первых строк из текстового файла.
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ head -n 5 p2/1_f.txt
+Hello World
+
+1. Команда pwd
+2. Команда cd
+3. Команда ls
+
+18) вывести несколько последних строк из текстового файла
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ tail -4 p2/1_f.txt
+7. Команда mkdir
+8. Команда rmdir
+9. Команда rm
+10. Команда touch
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less p2/1_f.txt
+
+20) вывести дату и время
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ date
+ 6 апр 2022 г. 23:40:54
+
+
+Задание *
+1) Отправить http запрос на сервер.
+Анжелика@DESKTOP-1BH0EIG MINGW64 ~
+$ curl http://162.55.220.72:5005/terminal-hw-request
+{"Intro":"Hello!! This is your the first response from server","Tasks":{"Task_1":"Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)","result":["Your_String","Your_number"]}}
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ vim script
+
+(фото script)
+
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
+$ ./script
+total 4
+drwxr-xr-x 1 Анжелика 197121 0 апр  7 11:55 .
+drwxr-xr-x 1 Анжелика 197121 0 апр  7 11:55 ..
+-rw-r--r-- 1 Анжелика 197121 0 апр  7 11:55 1_f.txt
+-rw-r--r-- 1 Анжелика 197121 0 апр  7 11:55 2_f.txt
+-rw-r--r-- 1 Анжелика 197121 0 апр  7 11:55 3_f.txt
+-rw-r--r-- 1 Анжелика 197121 0 апр  7 11:55 4_f.json
+-rw-r--r-- 1 Анжелика 197121 0 апр  7 11:55 5_f.json
+drwxr-xr-x 1 Анжелика 197121 0 апр  7 11:55 g_26
+drwxr-xr-x 1 Анжелика 197121 0 апр  7 11:55 g_27
+drwxr-xr-x 1 Анжелика 197121 0 апр  7 11:55 g_28
