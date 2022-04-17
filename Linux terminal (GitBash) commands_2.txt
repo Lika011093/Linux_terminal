@@ -1,4 +1,4 @@
-Termial. HW_2
+ Termial. HW_2
  1. Сделать папку dir_1
 Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal
 $ mkdir dir_1
@@ -68,11 +68,11 @@ the seConD 2
 
  14. Сделать текстовый файл tf_4.txt в котором будет 15 строк.
 Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1/inner_dir_1
-$ cat > tf_4.txt (16 раз нажать Enter)
+$ cat > tf_4.txt (15 раз нажать Enter)
 
  15. Сделать текстовый файл tF_5.txt в котором будет 13 строк.
 Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1/inner_dir_1
-$ cat > tf_5.txt (14 раз нажать Enter)
+$ cat > tF_5.txt (13 раз нажать Enter)
 
  16. Вывести список всех файлов в папке.
 Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1/inner_dir_1
@@ -130,20 +130,152 @@ tf_2.txt:-the second 2
 tf_2.txt:the sec 3
 
  24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -i sec *
+grep: inner_dir_1: Is a directory
+tf_2.txt:-the second 2
+tf_2.txt:the sec 3
+tf_2.txt:the seConD 2
 
  25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -w "sec" *
+grep: inner_dir_1: Is a directory
+tf_2.txt:the sec 3
+
  26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -i -w "sec" *
+grep: inner_dir_1: Is a directory
+tf_1.txt:- the Sec
+tf_2.txt:the sec 3
+
  27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -w "second" *
+grep: inner_dir_1: Is a directory
+tf_2.txt:-the second 2
+
  28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -i -w "second" *
+grep: inner_dir_1: Is a directory
+tf_1.txt:- the SEconD
+tf_2.txt:-the second 2
+tf_2.txt:the seConD 2
+
  29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -r -w "second" inner_dir_1/
+inner_dir_1/tf_3.txt:the second 2
+
  30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -l -r -w "second" *
+inner_dir_1/tf_3.txt
+tf_2.txt
+
  31. Найти все строки во всех файлах где нет комбинации “second”
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -r -v second *
+inner_dir_1/tf_3.txt:qwe
+inner_dir_1/tf_3.txt:asd
+inner_dir_1/tf_3.txt:zxc
+inner_dir_1/tf_3.txt:the sec 2
+inner_dir_1/tf_3.txt:the SeCoNd 2
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tf_4.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+inner_dir_1/tF_5.txt:
+tf_1.txt:- the Sec
+tf_1.txt:- the SEconD
+tf_2.txt:-the first 1
+tf_2.txt:-the third 3
+tf_2.txt:the sec 3
+tf_2.txt:the seConD 2
+
  32. Найти только название и путь к файлам где нет комбинации “second”
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -r -v -l second *
+inner_dir_1/tf_3.txt
+inner_dir_1/tf_4.txt
+inner_dir_1/tF_5.txt
+tf_1.txt
+tf_2.txt
+
  33. Вывести в терминал 4 последних строк любого текстового файла
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ tail -4 tf_2.txt
+-the second 2
+-the third 3
+the sec 3
+the seConD 2
+
  34. Вывести в терминал 4 первые строки любого текстового файла.
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ head -n4 tf_2.txt
+-the first 1
+-the second 2
+-the third 3
+the sec 3
+
  35. Команда в одну строку. Создать папку и создать текстовый файл с содержиммым.
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ mkdir inner_dir_2 && cat > 111.txt
+
+-b      Предваряет каждую строку номером блока, в котором она была найдена. Это может пригодиться при поиске блоков по контексту (блоки нумеруются с 0).
+-c      Выдает только количество строк, содержащих образец.
+-h      Предотвращает выдачу имени файла, содержащего сопоставившуюся строку, перед собственно строкой. Используется при поиске по нескольким файлам.
+-i      Игнорирует регистр символов при сравнениях.
+-l      Выдает только имена файлов, содержащих сопоставившиеся строки, по одному в строке. Если образец найден в нескольких строках файла, имя файла не повторяется.
+-n      Выдает перед каждой строкой ее номер в файле (строки нумеруются с 1).
+-s      Подавляет выдачу сообщений о не существующих или недоступных для чтения файлах.
+-v      Выдает все строки, за исключением содержащих образец.
+-w      Ищет выражение как слово, как если бы оно было окружено метасимволами \< и \>.
+
  36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -rwl "sec" | xargs mv -t inner_dir_1/
+
  37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -rwl "sec" | xargs cp -t inner_dir_2/
+
  38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -rw "sec" | tee 222.txt
+inner_dir_1/tf_2.txt:the sec 3
+inner_dir_1/tf_3.txt:the sec 2
+inner_dir_2/tf_2.txt:the sec 3
+inner_dir_2/tf_3.txt:the sec 2
+
  39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
+Анжелика@DESKTOP-1BH0EIG MINGW64 /c/group_28/Linux_terminal/dir_1
+$ grep -rwl "sec" | xargs rm -f
+
  40. Просто вывести в терминал строку “Good job!!”
+$ “Good job!!”
